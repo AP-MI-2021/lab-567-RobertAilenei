@@ -1,4 +1,4 @@
-from Domain.institutie import getNewObject, get_id
+from Domain.institutie2 import getNewObject, get_id
 from Logic.crud import create, read, delete, update
 
 
