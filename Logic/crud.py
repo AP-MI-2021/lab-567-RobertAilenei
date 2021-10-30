@@ -1,4 +1,4 @@
-from Domain.institutie2 import getNewObject, get_id
+from Domain.institutie import getNewObject, get_id
 
 
 def create(lista_obiecte: list, _id: int, _nume: str, _descriere: str, _pret: int, _locatie: str):
