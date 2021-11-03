@@ -45,7 +45,10 @@ def run_ui(obiecte):
                 except ValueError as ve:
                     print("Eroare: ", ve)
             elif comanda[0] == "delete":
-                obiecte = delete(obiecte, int(comanda[1]))
+                try:
+                    obiecte = delete(obiecte, int(comanda[1]))
+                except ValueError as ve:
+                    print("Eroare: ", ve)
             elif comanda[0] == "update":
                 try:
                     obiecte = update(obiecte, getNewObject(int(comanda[1]),
