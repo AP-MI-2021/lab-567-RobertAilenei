@@ -52,7 +52,7 @@ def run_ui(obiecte):
             elif comanda[0] == "update":
                 try:
                     obiecte = update(obiecte, getNewObject(int(comanda[1]),
-                                                       comanda[2], comanda[3], int(comanda[4]), comanda[5]))
+                                                           comanda[2], comanda[3], int(comanda[4]), comanda[5]))
                 except ValueError as ve:
                     print("Eroare: ", ve)
             elif comanda[0] == "showall":
@@ -60,7 +60,7 @@ def run_ui(obiecte):
             elif comanda[0] == "mod":
                 print(switch_locations(obiecte, comanda[1]))
             elif comanda[0] == "conc":
-                print(concatenate_strings(obiecte, comanda[1], comanda[2]))
+                print(concatenate_strings(obiecte, comanda[1], float(comanda[2])))
             elif comanda[0] == "exit":
                 stop = False
                 break
