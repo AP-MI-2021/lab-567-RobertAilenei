@@ -1,4 +1,6 @@
 def getNewObject(_id: int, _nume: str, _descriere: str, _pret: int, _locatie: str):
+    if len(_locatie) != 4:
+        raise ValueError("Lungimea locatiei trebuie sa aiba exact 4 caractere")
     obiect = {
         'id': _id,
         'nume': _nume,
