@@ -60,7 +60,10 @@ def run_ui(obiecte):
             elif comanda[0] == "mod":
                 print(switch_locations(obiecte, comanda[1]))
             elif comanda[0] == "conc":
-                print(concatenate_strings(obiecte, comanda[1], float(comanda[2])))
+                try:
+                    print(concatenate_strings(obiecte, comanda[1], float(comanda[2])))
+                except ValueError as ve:
+                    print("Eroare: ", ve)
             elif comanda[0] == "exit":
                 stop = False
                 break
