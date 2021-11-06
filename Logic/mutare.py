@@ -33,3 +33,48 @@ def concatenate_strings(lista, string, valoare):
         else:
             rezult.append(obiect)
     return rezult
+
+
+def det_price(lista):
+    """
+    Aceasta functie determina cel mai mare pret pentru fiecare locatie
+    :param lista:Aceasta functie primeste o lista
+    :return:Aceasta functie returneaza cel mai mare pret pentru fiecare locatie
+    """
+    rezult = {}
+    for obiect in lista:
+        locatie = get_locatie(obiect)
+        pret = get_pret(obiect)
+        if locatie in rezult:
+            if pret > get_pret(rezult[locatie]):
+                rezult[locatie] = obiect
+        else:
+            rezult[locatie] = obiect
+    return rezult
+
+
+def ascending_order(lista):
+    """
+    Aceasta functie primeste o lista pe care va trebui sa o ordoneze crescator dupa preturi
+    :param lista:Aceasta functie primeste o lista
+    :return: Aceasta functie returneaza lista ordonata crescator dupa preturi
+    https://www.tutorialsteacher.com/python/list-sort
+    """
+    return sorted(lista, key=get_pret)
+
+
+def sum_of_prices(lista):
+    """
+    Aceasta functie returneaza suma preturilor pentru fiecare locatie
+    :param lista:Aceasta functie primeste o lista
+    :return:Aceasta functie returneaza suma preturilor pentru fiecare locatie
+    """
+    rezult = {}
+    for obiect in lista:
+        locatie = get_locatie(obiect)
+        pret = float(get_pret(obiect))
+        if locatie in rezult:
+            rezult[locatie] = rezult[locatie]+pret
+        else:
+            rezult[locatie] = pret
+    return rezult
